@@ -1,5 +1,8 @@
 package com.bright.listofmessages
 
+import Conversation
+import Program
+import ProgramCard
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -126,55 +129,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Conversation(programs: List<Program>) {
-    LazyColumn {
-        items(programs) {prog -> ProgramCard(prog) }
-    }
-}
-
-@Composable
-fun ProgramCard(prog: Program) {
-    Row(
-        modifier = Modifier
-            .padding(8.dp), // Add padding around the card
-            verticalAlignment = Alignment.CenterVertically // Center the image vertically
-    ) {
-        Spacer(modifier = Modifier.width(2.dp))
-        Image(
-            painter = painterResource(id = R.drawable.miu_logo),
-            contentDescription = "person",
-            modifier = Modifier
-                .clip(CircleShape)
-                .size(70.dp)
-                .border(width = 2.dp, shape = CircleShape, color = Color.LightGray)
-
-        )
-        //create a mutable state variable that trigger UI updates when its value changes
-        var isExpanded by remember {
-            mutableStateOf(false)
-        }
-        Column(
-            modifier = Modifier.clickable { isExpanded = !isExpanded }
-                .padding(start = 8.dp) // Add padding to separate the text from the image
-        ) {
-            Spacer(modifier = Modifier.height(10.dp))
-            Text(
-                text = prog.programName,
-                color = MaterialTheme.colorScheme.secondary,
-                style = MaterialTheme.typography.titleSmall
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = prog.progarmDescription,
-                style = MaterialTheme.typography.bodyMedium,
-                maxLines = if(isExpanded) Int.MAX_VALUE else 2,
-                modifier = Modifier.padding(top = 4.dp)
-            )
-        }
-        Spacer(modifier = Modifier.height(70.dp))
-    }
-}
 
 @Preview(showBackground = true)
 @Composable
@@ -215,7 +169,3 @@ fun ConversationPreview() {
     }
 }
 
-data class Program(
-    val programName: String,
-    val progarmDescription: String
-)
