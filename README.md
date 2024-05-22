@@ -1,4 +1,4 @@
-# List of Messages Android App
+# Degree Program offered by Maharishi International University (MIU)
 
 This repository contains the source code for an Android application that  display a list of degree programs offered by Maharishi International University (MIU). The app uses Jetpack Compose for UI and showcases a simple implementation of a lazy list with expandable items.
 
@@ -83,7 +83,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
+```
 **ProgramCard.kt**
 
 ```kotlin
@@ -123,7 +123,7 @@ fun ProgramCard(prog: Program) {
     }
 }
 
-
+```
 **Conversation.kt**
 
 ```kotlin
@@ -133,7 +133,7 @@ fun Conversation(programs: List<Program>) {
         items(programs) { prog -> ProgramCard(prog) }
     }
 }
-
+```
 
 **Program.kt**
 
@@ -142,7 +142,7 @@ data class Program(
     val programName: String,
     val progarmDescription: String
 )
-
+```
 
 ## Screenshots
 
@@ -150,7 +150,7 @@ Normal View
 ![alt text](screenshots/normalView.png)
 
 Expanded View
-![alt text](screenshots/expandedView~~~~.png)
+![alt text](screenshots/expandedView.png)
 
 
 ## Thank you!!
