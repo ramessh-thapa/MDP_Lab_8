@@ -146,10 +146,13 @@ data class Program(
 
 ## Screenshots
 
-Normal View
+**Normal View**
+
 ![alt text](screenshots/normalView.png)
 
-Expanded View
+
+**Expanded View**
+
 ![alt text](screenshots/expandedView.png)
 
 
