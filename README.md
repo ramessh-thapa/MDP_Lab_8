@@ -1,4 +1,4 @@
-# Degree Program offered by Maharishi International University (MIU)
+# Degree Programs offered by Maharishi International University (MIU)
 
 This repository contains the source code for an Android application that  display a list of degree programs offered by Maharishi International University (MIU). The app uses Jetpack Compose for UI and showcases a simple implementation of a lazy list with expandable items.
 
